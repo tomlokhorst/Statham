@@ -44,15 +44,15 @@ extension JsonDecodeError: CustomStringConvertible {
       return [self.line]
 
     case .arrayElementErrors(let errors):
-      let errs = errors.map { (ix, err) in ("[\(ix)]", err) }
+      let errs = errors.map { (arg: (ix: Int, err: JsonDecodeError)) in ("[\(arg.ix)]", arg.err) }
       return JsonDecodeError.lines(verbosity: verbosity, type: "array", errors: errs)
 
     case .dictionaryErrors(let errors):
-      let errs = errors.map { (key, err) in ("\(key):", err) }
+      let errs = errors.map { (arg: (key: String, err: JsonDecodeError)) in ("\(arg.key):", arg.err) }
       return JsonDecodeError.lines(verbosity: verbosity, type: "dictionary", errors: errs)
 
     case .structErrors(let type, let errors):
-      let errs = errors.map { (key, err) in ("\(key):", err) }
+      let errs = errors.map { (arg: (key: String, err: JsonDecodeError)) in ("\(arg.key):", arg.err) }
       return JsonDecodeError.lines(verbosity: verbosity, type: "\(type) struct", errors: errs)
     }
   }
