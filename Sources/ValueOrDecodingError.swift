@@ -3,12 +3,12 @@
 //  Statham
 //
 //  Created by Tom on 2016-07-18.
-//  Copyright © 2016 nonstrict. All rights reserved.
+//  Copyright © 2016 Tom Lokhorst. All rights reserved.
 //
 
 import Foundation
 
-public enum ValueOrDecodingError<Wrapped : Decodable> : Decodable {
+public enum ValueOrDecodingError<Wrapped> {
   case value(Wrapped)
   case error(DecodingError)
 
@@ -25,6 +25,9 @@ public enum ValueOrDecodingError<Wrapped : Decodable> : Decodable {
     case .error(let error): return error
     }
   }
+}
+
+extension ValueOrDecodingError: Decodable where Wrapped: Decodable {
 
   public init(from decoder: Decoder) throws {
     do {
@@ -43,11 +46,9 @@ public enum ValueOrDecodingError<Wrapped : Decodable> : Decodable {
       }
     }
   }
-
 }
 
-// Waiting for Swift to add conditional conformance...
-extension ValueOrDecodingError where Wrapped : Encodable {
+extension ValueOrDecodingError: Encodable where Wrapped: Encodable {
 
   public func encode(to encoder: Encoder) throws {
     switch self {
