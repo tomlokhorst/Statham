@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.summary      = "Swift library for decoding JSON"
 
   s.description  = <<-DESC
-    Statham is a library written in Swift for encoding and decoding JSON.
+    Exposes the `ValueOrDecodingError<Wrapped>` type.
                    DESC
 
   s.authors           = { "Tom Lokhorst" => "tom@lokhorst.eu" }
