@@ -31,11 +31,6 @@ xcuserdata
 timeline.xctimeline
 playground.xcworkspace
 
-# Swift Package Manager
-#
-Packages/
-.build/
-
 # CocoaPods
 #
 Pods/
@@ -45,12 +40,9 @@ Pods/
 Carthage/Checkouts
 Carthage/Build
 
-# fastlane
+# Swift Package Manager
 #
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the 
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://github.com/fastlane/fastlane/blob/master/docs/Gitignore.md
+Packages/
+.build/
+Statham.xcodeproj
 
-fastlane/report.xml
-fastlane/screenshots
