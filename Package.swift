@@ -1,10 +1,12 @@
+// swift-tools-version:4.0
 import PackageDescription
 
 let package = Package(
   name: "Statham",
+  dependencies: [],
   targets: [
-    Target(name: "Statham"),
-  ],
-  dependencies: []
+    .target(name: "Statham"),
+    .testTarget(name: "StathamTests", dependencies: ["Statham"]),
+  ]
 )
 
