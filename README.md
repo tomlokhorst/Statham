@@ -28,6 +28,7 @@ Read more about [version 1](https://github.com/tomlokhorst/Statham/tree/version-
 Releases
 --------
 
+ - 2.1.0 - 2019-06-10 - Add Indirect type, to deal with cycles in JSON structs/enums
  - **2.0.0** - 2018-08-21 - Replaced previous library with ValueOrJsonError
 
 
