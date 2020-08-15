@@ -8,7 +8,7 @@ Example
 -------
 
 ```swift
-stuct Inbox: Decodable {
+struct Inbox: Decodable {
   let items: [ValueOrDecodingError<Item>] 
 }
 ```
