@@ -13,9 +13,16 @@ public enum ValueOrDecodingError<Wrapped> {
   case error(DecodingError)
 
   public var value: Wrapped? {
-    switch self {
-    case .value(let value): return value
-    case .error: return nil
+    get {
+      switch self {
+      case .value(let value): return value
+      case .error: return nil
+      }
+    }
+    set {
+      if let value = newValue {
+        self = .value(value)
+      }
     }
   }
 
